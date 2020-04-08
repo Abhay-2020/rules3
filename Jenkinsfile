@@ -8,7 +8,9 @@ pipeline {
 
                         stage('Maven Build'){
                             steps{
-                                    sh label:'Maven Build of jar file', script:'''mvn test'''
+                                    sh label:'Maven Build of jar file',  script:'''
+                    mvn clean package -DskipTests
+                '''
                             }
                                             }
                                       stage('Jacoco Coverage Report') {
